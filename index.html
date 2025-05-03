@@ -85,17 +85,22 @@
     }
     
     .sidebar {
-      position: fixed;
-      left: -300px;
-      top: 0;
-      width: 280px;
-      background-color: rgba(44, 44, 44, 0.98);
-      padding: 2rem 1rem;
-      height: 100vh;
-      transition: left 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      z-index: 10;
-      box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
-    }
+  position: fixed;
+  left: 0; /* Tetap 0 */
+  top: 0;
+  width: 280px;
+  background-color: rgba(44, 44, 44, 0.98);
+  padding: 2rem 1rem;
+  height: 100vh;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Animasi diubah */
+  z-index: 10;
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+  transform: translateX(-100%); /* Animasi slide dari kiri */
+}
+
+.sidebar.active {
+  transform: translateX(0); /* Geser ke posisi normal */
+}
     
     .sidebar.active {
       left: 0;
